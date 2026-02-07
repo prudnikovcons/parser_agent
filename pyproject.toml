@@ -1,0 +1,23 @@
+[project]
+name = "parsing-agent"
+version = "0.1.0"
+description = "Telegram parsing agent core logic and FastAPI server"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.110.0",
+  "pydantic>=1.10.13",
+  "uvicorn>=0.27.0",
+]
+
+[project.optional-dependencies]
+telegram = [
+  "telethon>=1.34.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/parsing_agent"]
